@@ -2,7 +2,7 @@ import { APIGatewayEventDefaultAuthorizerContext } from 'aws-lambda'
 import {PoolAdmin} from '../cognito/PoolAdmin';
 import { CognitoUser } from '../cognito/CognitoUser';
 
-export default class CognitoAuthorizer 
+export class CognitoAuthorizer 
 {
     // public api: CognitoAdminAPI;
     public authorizerAPIG: APIGatewayEventDefaultAuthorizerContext;

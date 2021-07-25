@@ -1,5 +1,5 @@
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from "aws-lambda";
-import CognitoAuthorizer from "./CognitoAuthorizer";
+import { CognitoAuthorizer } from "./CognitoAuthorizer";
 
 const CORS_OBJ = { 
     "Access-Control-Allow-Origin": "*", 
