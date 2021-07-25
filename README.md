@@ -1,5 +1,7 @@
 # AWS Serverless Tools
 
+`npm i @serverless-tools/aws`
+
 ```typescript
 import {Request as ApigRequest} from "@serverless-tools/aws/apigateway/Request";
 
