@@ -1,0 +1,30 @@
+{
+  "name": "@serverless-tools/aws",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run clear && tsc",
+    "clear": "rm -rf *.js *.d.ts && rm -rf test/*.js rm -rf test/*.d.ts"
+  },
+  "keywords": [
+    "AWS",
+    "APIGateway",
+    "Lambda",
+    "Cogito",
+    "@types/aws-lambda",
+    "aws-sdk3"
+  ],
+  "author": "Alexandre Santos",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.80",
+    "@types/lodash": "^4.14.171",
+    "@types/node": "^16.4.2",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "@aws-sdk/client-cognito-identity-provider": "^3.23.0",
+    "lodash": "^4.17.21"
+  }
+}
