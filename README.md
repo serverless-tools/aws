@@ -54,47 +54,50 @@ async function _GET(req: ApigRequest)
 ## Gateway
 
 - Request(event: APIGatewayProxyEvent)
-  - resource() : /order/{proxy+}
-  - path() : /order/param1/param2
-  - method() : GET | POST | PUT | etc.
-  - pathParams() : {"proxy":"param1/param2"}
-  - headers() : {Host: string, Authorization: string, etc}
-  - queryString() : ?param1=val1&param2=val2 => {"param1":["val1"],"param2":["val2"]}
-  - body()
-  - cognitoAuthorizer()
-  - responseCreate(body, statusCode, headers) 
+  - `resource()` : /order/{proxy+}
+  - `path()` : /order/param1/param2
+  - `method()` : GET | POST | PUT | etc.
+  - `pathParams()` : {"proxy":"param1/param2"}
+  - `headers()` : {Host: string, Authorization: string, etc}
+  - `queryString()` : ?param1=val1&param2=val2 => {"param1":["val1"],"param2":["val2"]}
+  - `body()`
+  - `cognitoAuthorizer()`
+  - `responseCreate(body, statusCode, headers)` 
 - CognitoAuthorizer(event.requestContext.authorizer: APIGatewayEventDefaultAuthorizerContext)
-  - poolId() 
-  - poolRegion() 
-  - sub() 
-  - userName() 
-  - groups() : string[]
-  - async email() 
-  - async user() : CognitoUser
+  - `poolId()`
+  - `poolRegion()`
+  - `sub()`
+  - `userName()`
+  - `groups()` : string[]
+  - `async email()`
+  - `async user()` : CognitoUser
 
 ## Cognito
 
 - CognitoUser
   - adminGetUserCommandOutput 
-    - userCreateDate : Date
-    - userLastModifiedDate: Date
-    - userStatus: UNCONFIRMED | CONFIRMED | ARCHIVED | COMPROMISED | UNKNOWN | RESET_REQUIRED | FORCE_CHANGE_PASSWORD 
-    - userName
-    - userEnable
+    - `userCreateDate` : Date
+    - `userLastModifiedDate`: Date
+    - `userStatus`: UNCONFIRMED | CONFIRMED | ARCHIVED | COMPROMISED | UNKNOWN | RESET_REQUIRED | FORCE_CHANGE_PASSWORD 
+    - `userName`
+    - `userEnable`
   - userAttributes?: AttributeType[]
-    - sub()
-    - email()
-    - name()
+    - `sub()`
+    - `email()`
+    - `name()`
 - PoolAdmin
-  - constructor(region, poolId)
+  - `constructor(region, poolId)`
   - List
-    - usersStartsWith(email)
-    - usersFromGroup(name)
+    - `usersStartsWith(email)`
+    - `usersFromGroup(name)`
   - Get
-    - userGet(username)
-    - userGetByAccessToken(accessToken) // needs 'aws.cognito.signin.user.admin' scope
-    - userGroups(username)
-    - userHasGroups(username, groups: string[])
+    - `userGet(username)`
+    - `userGetByAccessToken(accessToken)` // needs 'aws.cognito.signin.user.admin' scope
+    - `userGroups(username)`
+    - `userHasGroups(username, groups: string[])`
   - Create
-    - userCreate(email)
-    - userGroupAdd(username, group)
+    - `userCreate(email)`
+    - `userGroupAdd(username, group)`
+
+
+> Check [lambda example](https://github.com/serverless-tools/lambda-apig)
