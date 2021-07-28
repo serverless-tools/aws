@@ -63,7 +63,8 @@ async function _GET(req: ApigRequest)
   - `.body()`        => parsed object
   - `.cognitoAuthorizer()`
   - `.responseCreate(body, statusCode, headers)` 
-  - 
+
+
 - CognitoAuthorizer(`event.requestContext.authorizer: APIGatewayEventDefaultAuthorizerContext`)
   - `.poolId()`
   - `.poolRegion()`
@@ -77,20 +78,20 @@ async function _GET(req: ApigRequest)
 
 ## Cognito
 
-- CognitoUser
-- constructor(`userAttributes?: AttributeType[]`, `adminGetUserCommandOutput?: AdminGetUserCommandOutput`)
+- CognitoUser(`userAttributes?: AttributeType[]`, `adminGetUserCommandOutput?: AdminGetUserCommandOutput`)
   - adminGetUserCommandOutput 
     - `.userCreateDate()`       => Date
     - `.userLastModifiedDate()` => Date
     - `.userStatus()`           => UNCONFIRMED | CONFIRMED | ARCHIVED | COMPROMISED | UNKNOWN | RESET_REQUIRED | FORCE_CHANGE_PASSWORD 
     - `.userName()`
     - `.userEnable()`
-  - userAttributes?: AttributeType[]
+  - userAttributes
     - `.sub()`
     - `.email()`
     - `.name()`
-- PoolAdmin
-  - `constructor(region, poolId)`
+
+
+- PoolAdmin(`region`, `poolId`)
   - List
     - `.usersStartsWith(email)`
     - `.usersFromGroup(name)`
