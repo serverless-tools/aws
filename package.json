@@ -1,6 +1,6 @@
 {
   "name": "@serverless-tools/aws",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
   "main": "index.js",
   "repository": {
@@ -10,8 +10,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "esbuild": "ts-node esbuild",
-    "build": "tsc",
-    "clear": "rm -rf **/*.js **/*.d.ts"
+    "build": "npm run clear && tsc",
+    "clear": "rm -rf **/*.js **/*.d.ts",
+    "publish": "npm run build && npm publish"
   },
   "keywords": [
     "AWS",

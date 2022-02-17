@@ -66,7 +66,7 @@ export class Request
         {
             try
             {
-                JSON.parse(this.event.body) 
+                return JSON.parse(this.event.body) 
             }
             catch(e)
             {
